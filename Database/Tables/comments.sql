@@ -6,12 +6,12 @@ CREATE TABLE IF NOT EXISTS public.comments
     "desc" VARCHAR(200),                     -- Description of the comment, optional
     created_at TIMESTAMP,                    -- Timestamp for when the comment was created, optional
     "cmnt_userId" INTEGER,                   -- ID of the user who created the comment
-    "postId" INTEGER,                        -- ID of the post the comment belongs to
+    "postId" INTEGER,                      
 
     CONSTRAINT fk_user_comment FOREIGN KEY ("cmnt_userId")
-        REFERENCES public.users (id)         -- Foreign key referencing the users table
-        ON UPDATE CASCADE                    -- Cascade updates
-        ON DELETE CASCADE,                   -- Cascade deletions
+        REFERENCES public.users (id)         
+        ON UPDATE CASCADE                    
+        ON DELETE CASCADE,                   
 
     CONSTRAINT fk_post_comment FOREIGN KEY ("postId")
         REFERENCES public.posts (id)         -- Foreign key referencing the posts table
