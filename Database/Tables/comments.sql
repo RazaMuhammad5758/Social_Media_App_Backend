@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS public.comments
     id SERIAL NOT NULL PRIMARY KEY,          -- Automatically increments with each new row and set as the primary key
     "desc" VARCHAR(200),                     -- Description of the comment, optional
     created_at TIMESTAMP,                    -- Timestamp for when the comment was created, optional
-    "cmnt_userId" INTEGER,                   -- ID of the user who created the comment
+    "cmnt_userId" INTEGER,                  
     "postId" INTEGER,                      
 
     CONSTRAINT fk_user_comment FOREIGN KEY ("cmnt_userId")
