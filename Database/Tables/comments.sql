@@ -3,7 +3,7 @@
 CREATE TABLE IF NOT EXISTS public.comments
 (
     id SERIAL NOT NULL PRIMARY KEY,          -- Automatically increments with each new row and set as the primary key
-    "desc" VARCHAR(200),                     -- Description of the comment, optional
+    "desc" VARCHAR(200),                   
     created_at TIMESTAMP,                    
     "cmnt_userId" INTEGER,                  
     "postId" INTEGER,                      
