@@ -8,6 +8,6 @@ app.use("/api/users", userRouter);
 
 app.listen(8800, ()=>{
 
-    console.log("API working");
+    console.log("API is working");
 })
 
