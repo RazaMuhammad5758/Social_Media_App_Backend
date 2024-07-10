@@ -8,10 +8,10 @@ const app = express();
 
 
 app.use("/api/users", userRouter);
-app.use("/api/users", postRouter);
-app.use("/api/users", likeRouter);
-app.use("/api/users", commentRouter);
-app.use("/api/users", authRouter);
+app.use("/api/posts", postRouter);
+app.use("/api/likes", likeRouter);
+app.use("/api/comments", commentRouter);
+app.use("/api/auth", authRouter);
 
 
 
