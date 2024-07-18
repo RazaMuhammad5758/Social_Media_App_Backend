@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS public.users
     name VARCHAR(45) NOT NULL,       -- Name, required
     "coverPic" VARCHAR(100),         -- Cover picture URL or path, optional
     "profilePic" VARCHAR(100),       -- Profile picture URL or path, optional
-    city VARCHAR(45),                -- City, optional
+    city VARCHAR(45),                -- 
     website VARCHAR(45)              -- Website URL, optional
 );
 
