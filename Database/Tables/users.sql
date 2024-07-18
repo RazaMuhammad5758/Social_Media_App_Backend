@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS public.users
     email VARCHAR(45) NOT NULL,      -- Email, required
     password VARCHAR(200) NOT NULL,  -- Password, required
     name VARCHAR(45) NOT NULL,       -- Name, required
-    "coverPic" VARCHAR(100),         -- Cover picture URL or path, optional
+    "coverPic" VARCHAR(100),         -- 
     "profilePic" VARCHAR(100),       -- 
     city VARCHAR(45),                -- 
     website VARCHAR(45)              -- Website URL, optional
