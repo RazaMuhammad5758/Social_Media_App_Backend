@@ -1,6 +1,8 @@
 import { pool } from "../connetsDB.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
+// Register Function
 export const register = async (req, res) => {
     try {
         // Check if user exists
@@ -26,10 +28,34 @@ export const register = async (req, res) => {
     }
 };
 
+// Login Function
 export const login = async (req, res) => {
-    // Implement login functionality here
+    try {
+        const q = "SELECT * FROM users WHERE username = $1";
+        const { rows } = await pool.query(q, [req.body.username]);
+
+        if (rows.length === 0) return res.status(404).json("User not found");
+
+        const user = rows[0];
+        const checkPassword = bcrypt.compareSync(req.body.password, user.password);
+
+        if (!checkPassword) return res.status(400).json("Wrong Password or Username");
+
+        const token = jwt.sign({ id: user.id }, "secretkey");
+
+        const { password, ...others } = user;
+
+        res.cookie("accessToken", token, {
+            httpOnly: true
+        }).status(200).json(others);
+    } catch (err) {
+        return res.status(500).json(err);
+    }
 };
 
+// Logout Function
 export const logout = async (req, res) => {
     // Implement logout functionality here
+    res.clearCookie("accessToken");
+    return res.status(200).json("User has been logged out.");
 };

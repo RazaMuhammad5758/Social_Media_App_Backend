@@ -5,10 +5,14 @@ import postRouter from "./routes/posts.js";
 import likeRouter from "./routes/likes.js";
 import commentRouter from "./routes/comments.js";
 import authRouter from "./routes/auth.js";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
 //middlewares
 
 app.use(express.json())
+app.use(cors())
+app.use(cookieParser())
 
 
 app.use("/api/users", userRouter);
