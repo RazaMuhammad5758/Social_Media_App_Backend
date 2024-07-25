@@ -30,7 +30,7 @@ app.use("/api/auth", authRouter);
 
 
 
-const PORT = 8800; // Change this to a different port number if needed
+const PORT = 8800; // Change this to 
 
 app.listen(PORT, () => {
     console.log(`API is working on port ${PORT}`);
